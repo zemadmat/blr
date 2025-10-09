@@ -101,7 +101,10 @@ e<!DOCTYPE html>
                     throw new Error('Impossible de charger les matchs');
                 }
                 allMatches = await response.json();
-
+                
+                 // Débogage : Afficher les matchs chargés
+                console.log('Matchs chargés:', allMatches);
+                
                 // Générer les options de filtre d'équipe
                 const uniqueTeams = [...new Set(allMatches.map(match => match.team))];
                 uniqueTeams.forEach(team => {
@@ -173,6 +176,7 @@ e<!DOCTYPE html>
     </script>
 </body>
 </html>
+
 
 
 
