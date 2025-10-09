@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handball Club Matches</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #343a40;
+        }
+        table {
+            margin: 20px auto;
+            width: 80%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .icon {
+            margin-right: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .grayed-out {
+            background-color: #f1f1f1;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Handball Club Matches <img src="blr_rose.jpg" alt="BLR rose" width="50" > </h1>
+ 
+        <table id="matches-table" class="table table-bordered table-hover fade-in">
+            <thead>
+                <tr>
+                    <th>Équipe</th>
+                    <th>Adversaire</th>
+                    <th>Date du Match</th>
+                    <th>Heure</th>
+                    <th>Lieu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les matchs seront insérés ici -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS et dépendances -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        async function fetchMatches() {
+            try {
+                // Chargement direct du fichier JSON local
+                const response = await fetch('matches.json');
+                if (!response.ok) {
+                    throw new Error('Impossible de charger les matchs');
+                }
+                const matches = await response.json();
+
+                // Tri des matchs par date puis par heure
+                matches.sort((a, b) => {
+                    if (a.match_date !== b.match_date) {
+                        return new Date(a.match_date) - new Date(b.match_date);
+                    } else {
+                        return a.time.localeCompare(b.time);
+                    }
+                });
+
+                const tableBody = document.querySelector('#matches-table tbody');
+                tableBody.innerHTML = '';
+                const today = new Date();
+
+                matches.forEach(match => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${match.team}</td>
+                        <td>${match.opponent}</td>
+                        <td>${match.match_date}</td>
+                        <td>${match.time}</td>
+                        <td>${match.location} ${match.location === 'Domicile' ? '<i class="fas fa-house"></i>' : ''}</td>
+                    `;
+
+                    // Comparer la date de match avec la date actuelle
+                    const matchDate = new Date(match.match_date);
+                    if (matchDate < today) {
+                        row.classList.add('grayed-out');
+                    }
+
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Erreur de chargement des matchs:', error);
+                const tableBody = document.querySelector('#matches-table tbody');
+                const errorRow = document.createElement('tr');
+                errorRow.innerHTML = `<td colspan="5" class="text-center text-danger">Impossible de charger les matchs</td>`;
+                tableBody.appendChild(errorRow);
+            }
+        }
+
+        // Charger les matchs au chargement de la page
+        await fetchMatches();
+    });
+    </script>
+</body>
+</html>
+
