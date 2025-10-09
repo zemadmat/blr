@@ -107,6 +107,7 @@ e<!DOCTYPE html>
                 
                 // Générer les options de filtre d'équipe
                 const uniqueTeams = [...new Set(allMatches.map(match => match.team))];
+                uniqueTeams.sort(); // Trier les équipes alphabétiquement
                 uniqueTeams.forEach(team => {
                     const option = document.createElement('option');
                     option.value = team;
@@ -176,6 +177,7 @@ e<!DOCTYPE html>
     </script>
 </body>
 </html>
+
 
 
 
