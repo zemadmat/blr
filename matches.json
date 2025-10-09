@@ -14,7 +14,6 @@
 {"match_date":"2025-09-27", "time": "18:00"  , "team":"18"                ,"opponent": "MARLY HB"                                  ,"location": "Domicile"},
 {"match_date":"2025-09-27", "time": "18:00"  , "team":"SENIOR Excellence","opponent": "FOLSCHVILLER"                              ,"location": "Extérieur"},
 {"match_date":"2025-09-27", "time": "18:30"  , "team":"SENIOR 3e DTM"    ,"opponent": "MOULINS LES METZ HANDBALL 2"               ,"location": "Domicile"},
-{"match_date":"2025-09-27", "time": ""  , "team":"15"                 ,"opponent": "(Repos/Non-Renseigné)"                     ,"location": "N.D."},
 {"match_date":"2025-10-04", "time": "14:30"  , "team":"13"                 ,"opponent": "METZ HANDBALL"                             ,"location": "Extérieur"},
 {"match_date":"2025-10-04", "time": "16:00"  , "team":"18"                ,"opponent": "-18M ENTENTE CCH/MHB"                      ,"location": "Extérieur"},
 {"match_date":"2025-10-04", "time": "18:00"  , "team":"11"                 ,"opponent": "THIONVILLE MOSELLE HANDBALL"               ,"location": "Extérieur"},
@@ -57,7 +56,6 @@
 {"match_date":"2025-12-06", "time": ""  , "team":"SENIOR Excellence","opponent": "AMNEVILLE"                                 ,"location": "Domicile"},
 {"match_date":"2025-12-06", "time": ""  , "team":"11"                 ,"opponent": "THIONVILLE MOSELLE HANDBALL"               ,"location": "Domicile"},
 {"match_date":"2025-12-06", "time": ""  , "team":"13"                 ,"opponent": "METZ HANDBALL"                             ,"location": "Domicile"},
-{"match_date":"2025-12-13", "time": ""  , "team":"15"                 ,"opponent": "(Repos/Non-Renseigné)"                     ,"location": "N.D."},
 {"match_date":"2025-12-13", "time": ""  , "team":"18"                ,"opponent": "ENT HAGONDANGE/AMNEVILLE /METZ HB"         ,"location": "Extérieur"},
 {"match_date":"2025-12-13", "time": ""  , "team":"18R"              ,"opponent": "TAISSY CLUB HANDBALL"                      ,"location": "Extérieur"},
 {"match_date":"2025-12-13", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "FALCK 2"                                   ,"location": "Domicile"},
@@ -81,7 +79,6 @@
 {"match_date":"2026-01-31", "time": ""  , "team":"18R"              ,"opponent": "ENTENTE EPERN'AY U18M EXC"                 ,"location": "Extérieur"},
 {"match_date":"2026-01-31", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "HAYANGE"                                   ,"location": "Domicile"},
 {"match_date":"2026-01-31", "time": ""  , "team":"SENIOR Excellence","opponent": "THIONVILLE MOSELLE HANDBALL 2"             ,"location": "Domicile"},
-{"match_date":"2026-02-07", "time": ""  , "team":"15"                 ,"opponent": "(Repos/Non-Renseigné)"                     ,"location": "N.D."},
 {"match_date":"2026-02-07", "time": ""  , "team":"18"                ,"opponent": "VAL ST PIERRE"                             ,"location": "Extérieur"},
 {"match_date":"2026-02-07", "time": ""  , "team":"18R"              ,"opponent": "ENTENTE TROYES AUBE CHAMPAGNE HANDBALL"    ,"location": "Domicile"},
 {"match_date":"2026-02-07", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "MOULINS LES METZ HANDBALL 2"               ,"location": "Extérieur"},
@@ -108,7 +105,6 @@
 {"match_date":"2026-04-11", "time": ""  , "team":"15"                 ,"opponent": "FALCK"                                     ,"location": "Extérieur"},
 {"match_date":"2026-04-11", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "LONGUYONNAISE ENTENTE SPORTIVE 2"          ,"location": "Extérieur"},
 {"match_date":"2026-04-11", "time": ""  , "team":"SENIOR Excellence","opponent": "HAGUENAU"                                  ,"location": "Domicile"},
-{"match_date":"2026-05-02", "time": ""  , "team":"15"                 ,"opponent": "(Repos/Non-Renseigné)"                     ,"location": "N.D."},
 {"match_date":"2026-05-02", "time": ""  , "team":"18R"              ,"opponent": "ROSIERES ST-JULIEN HB"                     ,"location": "Extérieur"},
 {"match_date":"2026-05-02", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "ENTENTE GANDRANGE/BURE/7 AMNEVILLOIS"      ,"location": "Domicile"},
 {"match_date":"2026-05-02", "time": ""  , "team":"SENIOR Excellence","opponent": "AMNEVILLE"                                 ,"location": "Extérieur"},
@@ -122,3 +118,4 @@
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "GUENANGE 2"                                ,"location": "Domicile"},
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR Excellence","opponent": "E. STRASBOURG SCHILTIGHEIM ALSACE HANDBALL","location": "Extérieur"}
 ]
+
