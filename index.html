@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -111,7 +111,7 @@
                         <td>${match.match_date}</td>
                         <td>${match.time}</td>                        
                         <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
-                        <td>${match.resultat}</td>
+                        <td>${match.resultat == 'Gagné' ? '<i class="fa-solid fa-face-smile"></i>' : ''} ${match.resultat} ${match.resultat == 'Perdu' ? '<i class="fa-solid fa-face-sad-cry"></i>' : ''}</td>
                     `;
 
                     // Comparer la date de match avec la date actuelle
@@ -137,6 +137,7 @@
     </script>
 </body>
 </html>
+
 
 
 
