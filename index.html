@@ -156,31 +156,24 @@ e<!DOCTYPE html>
                     <td>${match.time}</td>                      
                         <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
                         <td>${match.resultat == 'Gagné' ? '<i class="fa-solid fa-face-smile"></i>' : ''} ${match.resultat} ${match.resultat == 'Perdu' ? '<i class="fa-solid fa-face-sad-cry"></i>' : ''}</td>
-                    `;
+                `;
 
-                    // Comparer la date de match avec la date actuelle
-                    const matchDate = new Date(match.match_date);
-                    if (matchDate < today) {
-                        row.classList.add('grayed-out');
-                    }
+                const matchDate = new Date(match.match_date);
+                if (matchDate < today) {
+                    row.classList.add('grayed-out');
+                }
 
-                    tableBody.appendChild(row);
-                });
-            } catch (error) {
-                console.error('Erreur de chargement des matchs:', error);
-                const tableBody = document.querySelector('#matches-table tbody');
-                const errorRow = document.createElement('tr');
-                errorRow.innerHTML = `<td colspan="5" class="text-center text-danger">Impossible de charger les matchs</td>`;
-                tableBody.appendChild(errorRow);
-            }
+                tableBody.appendChild(row);
+            });
         }
 
-        // Charger les matchs au chargement de la page
+        // Lancer le chargement des matchs
         await fetchMatches();
     });
     </script>
 </body>
 </html>
+
 
 
 
