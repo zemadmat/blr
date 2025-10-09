@@ -120,12 +120,12 @@
                     teamFilterSelect.appendChild(option);
                 });
                 // Générer les options de filtre de dates
-                const uniqueDate = [...new Set(allMatches.map(match => match.date))];
+                const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
                 uniqueDate.sort(); // Trier les équipes alphabétiquement
-                uniqueDate.forEach(date => {
+                uniqueDate.forEach(match_date => {
                     const option = document.createElement('option');
-                    option.value = date;
-                    option.textContent = date;
+                    option.value = match_date;
+                    option.textContent = match_date;
                     dateFilterSelect.appendChild(option);
                 });
                 // Afficher tous les matchs initialement
@@ -191,6 +191,7 @@
     </script>
 </body>
 </html>
+
 
 
 
