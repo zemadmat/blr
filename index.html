@@ -109,7 +109,7 @@
                         <td>${match.opponent}</td>
                         <td>${match.match_date}</td>
                         <td>${match.time}</td>                        
-                        <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : '<i class="fa-solid fa-car-side"></i>'} ${match.location}</td>
+                        <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
                     `;
 
                     // Comparer la date de match avec la date actuelle
