@@ -26,14 +26,14 @@
 {"match_date":"2025-10-11", "time": "16:30"  , "team":"11"                 ,"opponent": "KANFEN 1"                                  ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-10-11", "time": "16:30"  , "team":"18"                ,"opponent": "VAL ST PIERRE"                             ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-10-11", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "MOLSHEIM 2"                                ,"location": "Extérieur" , "resultat":""},
-{"match_date":"2025-10-11", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "AS MAXEVILLE"                              ,"location": "Extérieur" , "resultat":""},
+{"match_date":"2025-10-11", "time": "20:15"  , "team":"SENIOR 3e DTM"    ,"opponent": "AS MAXEVILLE"                              ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-10-18", "time": "19:00"  , "team":"SENIOR 3e DTM"    ,"opponent": "HAYANGE 2"                                 ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-08", "time": "14:00"  , "team":"11"                 ,"opponent": "ROMBAS 1"                                  ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-08", "time": "16:00"  , "team":"13"                 ,"opponent": "MOULINS LES METZ HANDBALL"                 ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-08", "time": "18:00"  , "team":"18"                ,"opponent": "VILLERUPT HANDBALL CLUB"                   ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-08", "time": "18:00"  , "team":"SENIOR 3e DTM"    ,"opponent": "HOMECOURT HANDBALL 3"                      ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-08", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "METZ HANDBALL"                             ,"location": "Domicile" , "resultat":""},
-{"match_date":"2025-11-12", "time": ""  , "team":"15"                 ,"opponent": "FOLSCHVILLER"                              ,"location": "Extérieur" , "resultat":""},
+{"match_date":"2025-10-12", "time": "14:00"  , "team":"15"                 ,"opponent": "FOLSCHVILLER"                              ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-15", "time": "16:15"  , "team":"15"                 ,"opponent": "HANDBALL CLUB DE VIGY"                     ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-15", "time": ""  , "team":"18R"              ,"opponent": "HOMECOURT HANDBALL"                        ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-15", "time": ""  , "team":"11"                 ,"opponent": "E.H. RIVES CATTENOM ET ENVIRON 2"          ,"location": "Domicile" , "resultat":""},
@@ -118,3 +118,4 @@
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "GUENANGE 2"                                ,"location": "Domicile" , "resultat":""},
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR Excellence","opponent": "E. STRASBOURG SCHILTIGHEIM ALSACE HANDBALL","location": "Extérieur" , "resultat":""}
 ]
+
