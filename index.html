@@ -108,9 +108,8 @@
                         <td>${match.team}</td>
                         <td>${match.opponent}</td>
                         <td>${match.match_date}</td>
-                        <td>${match.time}</td>
-                        <td>${match.location} ${match.location === 'Domicile' ? '<i class="fas fa-house"></i>' : ''}</td>
-                        <td>${match.location} ${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''}</td>
+                        <td>${match.time}</td>                        
+                        <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location}</td>
                     `;
 
                     // Comparer la date de match avec la date actuelle
@@ -136,6 +135,7 @@
     </script>
 </body>
 </html>
+
 
 
 
