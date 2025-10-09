@@ -65,6 +65,7 @@
                     <th>Date du Match</th>
                     <th>Heure</th>
                     <th>Lieu</th>
+                    <th>Résultat</th>
                 </tr>
             </thead>
             <tbody>
@@ -110,6 +111,7 @@
                         <td>${match.match_date}</td>
                         <td>${match.time}</td>                        
                         <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
+                        <td>${match.resultat}</td>
                     `;
 
                     // Comparer la date de match avec la date actuelle
@@ -135,6 +137,7 @@
     </script>
 </body>
 </html>
+
 
 
 
