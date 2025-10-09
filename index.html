@@ -110,6 +110,7 @@
                         <td>${match.match_date}</td>
                         <td>${match.time}</td>
                         <td>${match.location} ${match.location === 'Domicile' ? '<i class="fas fa-house"></i>' : ''}</td>
+                        <td>${match.location} ${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''}</td>
                     `;
 
                     // Comparer la date de match avec la date actuelle
@@ -135,6 +136,7 @@
     </script>
 </body>
 </html>
+
 
 
 
