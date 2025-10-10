@@ -8,54 +8,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Font Awesome -->
-    
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-            color: #343a40;
-        }
-        table {
-            margin: 20px auto;
-            width: 80%;
-            border-collapse: collapse;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #dee2e6;
-        }
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        .icon {
-            margin-right: 10px;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-        .grayed-out {
-            background-color: #f1f1f1;
-            color: #888;
-        }
-        .filter-container {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet" />
+
 </head>
 <body>
     <div class="container">
@@ -64,6 +18,11 @@
             <label for="team-filter">Filtrer par équipe :</label>
             <select id="team-filter" class="form-control">
                 <option value="">Toutes les équipes</option>
+                <!-- Options seront générées dynamiquement -->
+            </select>
+             <label for="date-filter">Date du Match</label>
+            <select id="date-filter" class="form-control">
+                <option value="">Toutes les dates</option>
                 <!-- Options seront générées dynamiquement -->
             </select>
         </div>
@@ -114,27 +73,60 @@
                     option.textContent = team;
                     teamFilterSelect.appendChild(option);
                 });
+
+                // Générer les options de filtre de date
+                const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
+                uniqueDate.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+                uniqueDate.forEach(match_date => {
+                    const optiond = document.createElement('option');
+                    optiond.value = match_date;
+                    optiond.textContent = match_date;
+                    dateFilterSelect.appendChild(optiond);
+                });
                 // Afficher tous les matchs initialement
                 displayMatches(allMatches);
 
                 // Ajouter l'écouteur d'événement pour le filtrage
                 teamFilterSelect.addEventListener('change', filterMatches);
+                dateFilterSelect.addEventListener('change', filterMatches);                
                 
             } catch (error) {
                 console.error('Erreur de chargement des matchs:', error);
             }
         }
 
-        function filterMatches() {
-            const selectedTeam = teamFilterSelect.value;
-            
-            // Filtrer les matchs
-            const filteredMatches = selectedTeam 
-                ? allMatches.filter(match => match.team === selectedTeam)
-                : allMatches;
-            // Afficher les matchs filtrés
-            displayMatches(filteredMatches);
-        }
+function filterMatches() {
+    const selectedTeam = teamFilterSelect.value;
+    const selectedDate = dateFilterSelect.value;
+    
+    // Filtrer les matchs
+    let filteredMatches = allMatches;
+
+    // Filtre par équipe
+    if (selectedTeam) {
+        filteredMatches = filteredMatches.filter(match => match.team === selectedTeam);
+    }
+
+    // Filtre par date
+    if (selectedDate) {
+        filteredMatches = filteredMatches.filter(match => {
+            // Convertir la date du match et la date sélectionnée en objets Date
+            const matchDate = new Date(match.match_date);
+            const filterDate = new Date(selectedDate);
+
+            // Comparer les dates (année, mois, jour)
+            return (
+                matchDate.getFullYear() === filterDate.getFullYear() &&
+                matchDate.getMonth() === filterDate.getMonth() &&
+                matchDate.getDate() === filterDate.getDate()
+            );
+        });
+    }
+
+    // Afficher les matchs filtrés
+    displayMatches(filteredMatches);
+}
 
         function displayMatches(matches) {
             const tableBody = document.querySelector('#matches-table tbody');
@@ -176,6 +168,7 @@
     </script>
 </body>
 </html>
+
 
 
 
