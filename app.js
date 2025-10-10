@@ -1,3 +1,4 @@
+
     document.addEventListener('DOMContentLoaded', async () => {
         let allMatches = []; // Stocker tous les matchs
         const teamFilterSelect = document.getElementById('team-filter');
