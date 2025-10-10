@@ -1,50 +1,116 @@
-// Nouvelle version de app.js (JavaScript côté client)
-document.addEventListener('DOMContentLoaded', () => {
-    // Chargement des matchs
-    async function loadMatches() {
+document.addEventListener('DOMContentLoaded', async () => {
+    let allMatches = []; // Stocker tous les matchs
+    const teamFilterSelect = document.getElementById('team-filter');
+
+    async function fetchMatches() {
         try {
             const response = await fetch('matches.json');
-            const matches = await response.json();
-            // Logique de traitement des matchs
-            displayMatches(matches);
+            if (!response.ok) {
+                throw new Error('Impossible de charger les matchs');
+            }
+            allMatches = await response.json();
+            
+             // Débogage : Afficher les matchs chargés
+            console.log('Matchs chargés:', allMatches);
+            
+            // Générer les options de filtre d'équipe
+            const uniqueTeams = [...new Set(allMatches.map(match => match.team))];
+            uniqueTeams.sort(); // Trier les équipes alphabétiquement
+            uniqueTeams.forEach(team => {
+                const option = document.createElement('option');
+                option.value = team;
+                option.textContent = team;
+                teamFilterSelect.appendChild(option);
+            });
+
+            // Générer les options de filtre de date
+            const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
+            uniqueDate.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+            uniqueDate.forEach(match_date => {
+                const optiond = document.createElement('option');
+                optiond.value = match_date;
+                optiond.textContent = match_date;
+                dateFilterSelect.appendChild(optiond);
+            });
+            // Afficher tous les matchs initialement
+            displayMatches(allMatches);
+
+            // Ajouter l'écouteur d'événement pour le filtrage
+            teamFilterSelect.addEventListener('change', filterMatches);
+            dateFilterSelect.addEventListener('change', filterMatches);                
+            
         } catch (error) {
             console.error('Erreur de chargement des matchs:', error);
         }
     }
 
-    // Chargement des équipes
-    function loadTeams() {
-        const teams = [
-            { id: 1, name: '11', level: 'Niveau 1' },
-            { id: 2, name: '13', level: 'Niveau 2' },
-            { id: 3, name: 'SENIOR 3e DTM', level: 'Niveau 3' },
-            { id: 4, name: 'SENIOR EXCELLENCE', level: 'Niveau 4' },
-            { id: 5, name: '18', level: 'Niveau 5' }
-        ];
-        // Logique de traitement des équipes
-        displayTeams(teams);
-    }
+function filterMatches() {
+const selectedTeam = teamFilterSelect.value;
+const selectedDate = dateFilterSelect.value;
 
-    // Fonctions pour afficher les données
+// Filtrer les matchs
+let filteredMatches = allMatches;
+
+// Filtre par équipe
+if (selectedTeam) {
+    filteredMatches = filteredMatches.filter(match => match.team === selectedTeam);
+}
+
+// Filtre par date
+if (selectedDate) {
+    filteredMatches = filteredMatches.filter(match => {
+        // Convertir la date du match et la date sélectionnée en objets Date
+        const matchDate = new Date(match.match_date);
+        const filterDate = new Date(selectedDate);
+
+        // Comparer les dates (année, mois, jour)
+        return (
+            matchDate.getFullYear() === filterDate.getFullYear() &&
+            matchDate.getMonth() === filterDate.getMonth() &&
+            matchDate.getDate() === filterDate.getDate()
+        );
+    });
+}
+
+// Afficher les matchs filtrés
+displayMatches(filteredMatches);
+}
+
     function displayMatches(matches) {
-        const matchesContainer = document.getElementById('matches-list');
+        const tableBody = document.querySelector('#matches-table tbody');
+        tableBody.innerHTML = '';
+        const today = new Date();
+
+        // Trier les matchs
+        matches.sort((a, b) => {
+            if (a.match_date !== b.match_date) {
+                return new Date(a.match_date) - new Date(b.match_date);
+            } else {
+                return a.time.localeCompare(b.time);
+            }
+        });
+
         matches.forEach(match => {
-            const matchElement = document.createElement('div');
-            matchElement.textContent = `Match: ${match.team}`;
-            matchesContainer.appendChild(matchElement);
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${match.team}</td>
+                <td>${match.opponent}</td>
+                <td>${match.match_date}</td>
+                <td>${match.time}</td>                      
+                    <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
+                    <td>${match.resultat == 'Gagné' ? '<i class="fa-solid fa-face-smile"></i>' : ''} ${match.resultat} ${match.resultat == 'Perdu' ? '<i class="fa-solid fa-face-sad-cry"></i>' : ''}</td>
+            `;
+
+            const matchDate = new Date(match.match_date);
+            if (matchDate < today) {
+                row.classList.add('grayed-out');
+            }
+
+            tableBody.appendChild(row);
         });
     }
 
-    function displayTeams(teams) {
-        const teamsContainer = document.getElementById('teams-list');
-        teams.forEach(team => {
-            const teamElement = document.createElement('div');
-            teamElement.textContent = `Équipe: ${team.name} - ${team.level}`;
-            teamsContainer.appendChild(teamElement);
-        });
-    }
-
-    // Initialisation
-    loadMatches();
-    loadTeams();
+    // Lancer le chargement des matchs
+    await fetchMatches();
 });
