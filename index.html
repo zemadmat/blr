@@ -48,126 +48,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', async () => {
-        let allMatches = []; // Stocker tous les matchs
-        const teamFilterSelect = document.getElementById('team-filter');
 
-        async function fetchMatches() {
-            try {
-                const response = await fetch('matches.json');
-                if (!response.ok) {
-                    throw new Error('Impossible de charger les matchs');
-                }
-                allMatches = await response.json();
-                
-                 // Débogage : Afficher les matchs chargés
-                console.log('Matchs chargés:', allMatches);
-                
-                // Générer les options de filtre d'équipe
-                const uniqueTeams = [...new Set(allMatches.map(match => match.team))];
-                uniqueTeams.sort(); // Trier les équipes alphabétiquement
-                uniqueTeams.forEach(team => {
-                    const option = document.createElement('option');
-                    option.value = team;
-                    option.textContent = team;
-                    teamFilterSelect.appendChild(option);
-                });
+    <script src="app.js"></script>
 
-                // Générer les options de filtre de date
-                const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
-                uniqueDate.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
-
-                uniqueDate.forEach(match_date => {
-                    const optiond = document.createElement('option');
-                    optiond.value = match_date;
-                    optiond.textContent = match_date;
-                    dateFilterSelect.appendChild(optiond);
-                });
-                // Afficher tous les matchs initialement
-                displayMatches(allMatches);
-
-                // Ajouter l'écouteur d'événement pour le filtrage
-                teamFilterSelect.addEventListener('change', filterMatches);
-                dateFilterSelect.addEventListener('change', filterMatches);                
-                
-            } catch (error) {
-                console.error('Erreur de chargement des matchs:', error);
-            }
-        }
-
-function filterMatches() {
-    const selectedTeam = teamFilterSelect.value;
-    const selectedDate = dateFilterSelect.value;
-    
-    // Filtrer les matchs
-    let filteredMatches = allMatches;
-
-    // Filtre par équipe
-    if (selectedTeam) {
-        filteredMatches = filteredMatches.filter(match => match.team === selectedTeam);
-    }
-
-    // Filtre par date
-    if (selectedDate) {
-        filteredMatches = filteredMatches.filter(match => {
-            // Convertir la date du match et la date sélectionnée en objets Date
-            const matchDate = new Date(match.match_date);
-            const filterDate = new Date(selectedDate);
-
-            // Comparer les dates (année, mois, jour)
-            return (
-                matchDate.getFullYear() === filterDate.getFullYear() &&
-                matchDate.getMonth() === filterDate.getMonth() &&
-                matchDate.getDate() === filterDate.getDate()
-            );
-        });
-    }
-
-    // Afficher les matchs filtrés
-    displayMatches(filteredMatches);
-}
-
-        function displayMatches(matches) {
-            const tableBody = document.querySelector('#matches-table tbody');
-            tableBody.innerHTML = '';
-            const today = new Date();
-
-            // Trier les matchs
-            matches.sort((a, b) => {
-                if (a.match_date !== b.match_date) {
-                    return new Date(a.match_date) - new Date(b.match_date);
-                } else {
-                    return a.time.localeCompare(b.time);
-                }
-            });
-
-            matches.forEach(match => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${match.team}</td>
-                    <td>${match.opponent}</td>
-                    <td>${match.match_date}</td>
-                    <td>${match.time}</td>                      
-                        <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
-                        <td>${match.resultat == 'Gagné' ? '<i class="fa-solid fa-face-smile"></i>' : ''} ${match.resultat} ${match.resultat == 'Perdu' ? '<i class="fa-solid fa-face-sad-cry"></i>' : ''}</td>
-                `;
-
-                const matchDate = new Date(match.match_date);
-                if (matchDate < today) {
-                    row.classList.add('grayed-out');
-                }
-
-                tableBody.appendChild(row);
-            });
-        }
-
-        // Lancer le chargement des matchs
-        await fetchMatches();
-    });
-    </script>
 </body>
 </html>
+
 
 
 
