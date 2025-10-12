@@ -21,12 +21,12 @@
 {"match_date":"2025-10-04", "time": "18:30"  , "team":"18R"              ,"opponent": "ENTENTE TROYES AUBE CHAMPAGNE HANDBALL"    ,"location": "Extérieur" , "resultat":"Gagné"},
 {"match_date":"2025-10-04", "time": "19:30"  , "team":"SENIOR 3e DTM"    ,"opponent": "ES HAGONDANGE HANDBALL 3"                  ,"location": "Extérieur" , "resultat":"Gagné"},
 {"match_date":"2025-10-04", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "FENSCH VALLEE HANDBALL"                    ,"location": "Extérieur" , "resultat":"Perdu"},
-{"match_date":"2025-10-11", "time": "14:30"  , "team":"13"                 ,"opponent": "ENT WOIPPY HANDBALL/MONTIGNY -13 M"        ,"location": "Extérieur" , "resultat":""},
-{"match_date":"2025-10-11", "time": "15:45"  , "team":"18R"              ,"opponent": "AS ST BRICE"                               ,"location": "Extérieur" , "resultat":""},
-{"match_date":"2025-10-11", "time": "16:30"  , "team":"11"                 ,"opponent": "KANFEN 1"                                  ,"location": "Extérieur" , "resultat":""},
+{"match_date":"2025-10-11", "time": "14:30"  , "team":"13"                 ,"opponent": "ENT WOIPPY HANDBALL/MONTIGNY -13 M"        ,"location": "Extérieur" , "resultat":"Gagné"},
+{"match_date":"2025-10-11", "time": "15:45"  , "team":"18R"              ,"opponent": "AS ST BRICE"                               ,"location": "Extérieur" , "resultat":"Perdu"},
+{"match_date":"2025-10-11", "time": "16:30"  , "team":"11"                 ,"opponent": "KANFEN 1"                                  ,"location": "Extérieur" , "resultat":"Perdu"},
 {"match_date":"2025-10-11", "time": "16:30"  , "team":"18"                ,"opponent": "VAL ST PIERRE"                             ,"location": "Domicile" , "resultat":""},
-{"match_date":"2025-10-11", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "MOLSHEIM 2"                                ,"location": "Extérieur" , "resultat":""},
-{"match_date":"2025-10-11", "time": "20:15"  , "team":"SENIOR 3e DTM"    ,"opponent": "AS MAXEVILLE"                              ,"location": "Extérieur" , "resultat":""},
+{"match_date":"2025-10-11", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "MOLSHEIM 2"                                ,"location": "Extérieur" , "resultat":"Perdu"},
+{"match_date":"2025-10-11", "time": "20:15"  , "team":"SENIOR 3e DTM"    ,"opponent": "AS MAXEVILLE"                              ,"location": "Extérieur" , "resultat":"Gagné"},
 {"match_date":"2025-10-18", "time": "19:00"  , "team":"SENIOR 3e DTM"    ,"opponent": "HAYANGE 2"                                 ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-08", "time": "14:00"  , "team":"11"                 ,"opponent": "ROMBAS 1"                                  ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-01", "time": "16:00"  , "team":"15"                 ,"opponent": "VAL SAINT PIERRE"                                  ,"location": "Domicile" , "resultat":""},
@@ -41,7 +41,7 @@
 {"match_date":"2025-11-15", "time": ""  , "team":"13"                 ,"opponent": "ROMBAS 2"                                  ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-22", "time": "18:00"  , "team":"13"                 ,"opponent": "METZ MAGNY HB 1"                           ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-22", "time": "18:00"  , "team":"SENIOR Excellence","opponent": "P2H HANDBALL"                              ,"location": "Extérieur" , "resultat":""},
-{"match_date":"2025-11-22", "time": "20:30"  , "team":"SENIOR 3e DTM"    ,"opponent": "MARLY HB 2"                                ,"location": "Extérieur" , "resultat":""},
+{"match_date":"2025-11-22", "time": "20:30"  , "team":"SENIOR 3e2025-10 DTM"    ,"opponent": "MARLY HB 2"                                ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-22", "time": ""  , "team":"11"                 ,"opponent": "HOMECOURT HANDBALL"                        ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-22", "time": ""  , "team":"15"                 ,"opponent": "COURCELLES CHAUSSY"                        ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-22", "time": ""  , "team":"18"                ,"opponent": "HANDBALL CLUB DE VIGY"                     ,"location": "Domicile" , "resultat":""},
@@ -119,4 +119,5 @@
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "GUENANGE 2"                                ,"location": "Domicile" , "resultat":""},
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR Excellence","opponent": "E. STRASBOURG SCHILTIGHEIM ALSACE HANDBALL","location": "Extérieur" , "resultat":""}
 ]
+
 
