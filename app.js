@@ -47,19 +47,6 @@
             }
         }
 
-        // function filterMatches() {
-        //     const selectedTeam = teamFilterSelect.value;
-        //     const selectedDate = dateFilterSelect.value;
-            
-        //     // Filtrer les matchs
-        //     const filteredMatches = selectedTeam 
-        //         ? allMatches.filter(match => match.team === selectedTeam)
-        //         : allMatches;
-
-        //     // Afficher les matchs filtrés
-        //     displayMatches(filteredMatches);
-        // }
-
 
 function filterMatches() {
     const selectedTeam = teamFilterSelect.value;
