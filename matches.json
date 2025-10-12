@@ -34,7 +34,7 @@
 {"match_date":"2025-11-08", "time": "18:00"  , "team":"18"                ,"opponent": "VILLERUPT HANDBALL CLUB"                   ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-08", "time": "18:00"  , "team":"SENIOR 3e DTM"    ,"opponent": "HOMECOURT HANDBALL 3"                      ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-08", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "METZ HANDBALL"                             ,"location": "Domicile" , "resultat":""},
-{"match_date":"2025-10-12", "time": "14:00"  , "team":"15"                 ,"opponent": "FOLSCHVILLER"                              ,"location": "Extérieur" , "resultat":""},
+{"match_date":"2025-10-12", "time": "14:00"  , "team":"15"                 ,"opponent": "FOLSCHVILLER"                              ,"location": "Extérieur" , "resultat":"Perdu"},
 {"match_date":"2025-11-15", "time": "16:15"  , "team":"15"                 ,"opponent": "HANDBALL CLUB DE VIGY"                     ,"location": "Extérieur" , "resultat":""},
 {"match_date":"2025-11-15", "time": ""  , "team":"18R"              ,"opponent": "HOMECOURT HANDBALL"                        ,"location": "Domicile" , "resultat":""},
 {"match_date":"2025-11-15", "time": ""  , "team":"11"                 ,"opponent": "E.H. RIVES CATTENOM ET ENVIRON 2"          ,"location": "Domicile" , "resultat":""},
@@ -119,5 +119,6 @@
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "GUENANGE 2"                                ,"location": "Domicile" , "resultat":""},
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR Excellence","opponent": "E. STRASBOURG SCHILTIGHEIM ALSACE HANDBALL","location": "Extérieur" , "resultat":""}
 ]
+
 
 
