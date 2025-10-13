@@ -24,7 +24,7 @@
 {"match_date":"2025-10-11", "time": "14:30"  , "team":"13"                 ,"opponent": "ENT WOIPPY HANDBALL/MONTIGNY -13 M"        ,"location": "Extérieur" , "resultat":"Gagné", "competition":"Championnat"},
 {"match_date":"2025-10-11", "time": "15:45"  , "team":"18R"              ,"opponent": "AS ST BRICE"                               ,"location": "Extérieur" , "resultat":"Perdu", "competition":"Championnat"},
 {"match_date":"2025-10-11", "time": "16:30"  , "team":"11"                 ,"opponent": "KANFEN 1"                                  ,"location": "Extérieur" , "resultat":"Perdu", "competition":"Championnat"},
-{"match_date":"2025-10-11", "time": "16:30"  , "team":"18"                ,"opponent": "VAL ST PIERRE"                             ,"location": "Domicile" , "resultat":"", "competition":"Championnat"},
+{"match_date":"2025-10-11", "time": "16:30"  , "team":"18"                ,"opponent": "VAL ST PIERRE"                             ,"location": "Domicile" , "resultat":"Perdu", "competition":"Championnat"},
 {"match_date":"2025-10-11", "time": "20:30"  , "team":"SENIOR Excellence","opponent": "MOLSHEIM 2"                                ,"location": "Extérieur" , "resultat":"Perdu", "competition":"Championnat"},
 {"match_date":"2025-10-11", "time": "20:15"  , "team":"SENIOR 3e DTM"    ,"opponent": "AS MAXEVILLE"                              ,"location": "Extérieur" , "resultat":"Gagné", "competition":"Championnat"},
 {"match_date":"2025-10-18", "time": "19:00"  , "team":"SENIOR 3e DTM"    ,"opponent": "HAYANGE 2"                                 ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
