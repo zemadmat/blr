@@ -38,7 +38,13 @@
                     competFilterSelect.appendChild(optionc);
                 });
                 // Générer les options de filtre de date
-                const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
+                // Filtrer les dates uniques supérieures ou égales à aujourd'hui
+                const today = new Date().toISOString().split('T')[0];
+                const uniqueDate = [...new Set(allMatches
+                    .filter(match => match.match_date >= today)
+                    .map(match => match.match_date)
+                )];
+                // const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
                 uniqueDate.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
 
                 uniqueDate.forEach(match_date => {
@@ -47,6 +53,7 @@
                     optiond.textContent = match_date;
                     dateFilterSelect.appendChild(optiond);
                 });
+
 
                 // Afficher tous les matchs initialement
                 displayMatches(allMatches);
