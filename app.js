@@ -3,6 +3,7 @@
         let allMatches = []; // Stocker tous les matchs
         const teamFilterSelect = document.getElementById('team-filter');
         const dateFilterSelect = document.getElementById('date-filter');
+        const competFilterSelect = document.getElementById('competition-filter');
 
         async function fetchMatches() {
             try {
@@ -25,6 +26,17 @@
                     option.textContent = team;
                     teamFilterSelect.appendChild(option);
                 });
+
+                // Générer les options de filtre de competitions
+                const uniqueCompet = [...new Set(allMatches.map(match => match.competition))];
+                uniqueCompet.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+                uniqueCompet.forEach(competition => {
+                    const optionc = document.createElement('option');
+                    optionc.value = competition;
+                    optionc.textContent = competition;
+                    competFilterSelect.appendChild(optionc);
+                });
                 // Générer les options de filtre de date
                 const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
                 uniqueDate.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
@@ -41,6 +53,7 @@
 
                 // Ajouter l'écouteur d'événement pour le filtrage
                 teamFilterSelect.addEventListener('change', filterMatches);
+                competFilterSelect.addEventListener('change', filterMatches);
                 dateFilterSelect.addEventListener('change', filterMatches);
             } catch (error) {
                 console.error('Erreur de chargement des matchs:', error);
@@ -51,6 +64,7 @@
 function filterMatches() {
     const selectedTeam = teamFilterSelect.value;
     const selectedDate = dateFilterSelect.value;
+    const selectedCompet = competFilterSelect.value;
     
     // Filtrer les matchs
     let filteredMatches = allMatches;
@@ -58,6 +72,10 @@ function filterMatches() {
     // Filtre par équipe
     if (selectedTeam) {
         filteredMatches = filteredMatches.filter(match => match.team === selectedTeam);
+    }
+    // Filtre par competition
+    if (selectedCompet) {
+        filteredMatches = filteredMatches.filter(match => match.competition === selectedCompet);
     }
 
     // Filtre par date
@@ -96,6 +114,21 @@ function filterMatches() {
 
             matches.forEach(match => {
                 const row = document.createElement('tr');
+                const matchDate = new Date(match.match_date);
+
+                const dateOnly = new Date(
+                    matchDate.getFullYear(), 
+                    matchDate.getMonth(), 
+                    matchDate.getDate()
+                );
+                const todayNew = new Date(
+                    today.getFullYear(), 
+                    today.getMonth(), 
+                    today.getDate()
+                );
+                const todayPlus7Days = new Date(todayNew);
+                todayPlus7Days.setDate(todayNew.getDate() + 7);
+
                 row.innerHTML = `
                     <td>${match.team}</td>
                     <td>${match.opponent}</td>
@@ -106,11 +139,14 @@ function filterMatches() {
                     <td>${match.competition}</td>
                 `;
 
-                const matchDate = new Date(match.match_date);
-                if (matchDate < today) {
-                    row.classList.add('grayed-out');
-                }
 
+                if (new Date(dateOnly) < new Date(todayNew)) {
+                    row.classList.add('grayed-out');
+                // } else if (new Date(dateOnly).getTime() === new Date(todayNew).getTime()) {
+                } else if (dateOnly >= todayNew && dateOnly <= todayPlus7Days) {
+                    row.classList.add('greened-out');
+                }
+                
                 tableBody.appendChild(row);
             });
         }
