@@ -156,8 +156,8 @@ function displayMatches(matches) {
         row.innerHTML = `
             <td>${match.team}</td>
             <td>${match.opponent}</td>
-            <td>${match.match_date}</td>
-            <td>${match.time}</td>                      
+            <td>${match.match_date == '2025-11-08' ? '<i class="fa-solid fa-bell"></i>' : ''} ${match.match_date == '2025-12-06' ? '<i class="fa-solid fa-bell"></i>' : ''} ${match.match_date} </td>
+            <td>${match.time}</td>
             <td>${match.location == 'Domicile' ? '<i class="fas fa-house"></i>' : ''} ${match.location} ${match.location == 'Extérieur' ? '<i class="fas fa-car-side"></i>' : ''}</td>
             <td>${match.resultat == 'Gagné' ? '<i class="fa-solid fa-face-smile"></i>' : ''} ${match.resultat} ${match.resultat == 'Perdu' ? '<i class="fa-solid fa-face-sad-cry"></i>' : ''}</td>
             <td>${match.competition}</td>
@@ -172,4 +172,5 @@ function displayMatches(matches) {
 }
  // Lancer le chargement des matchs
         await fetchMatches();
+
     });
