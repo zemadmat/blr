@@ -1,9 +1,9 @@
-
-    document.addEventListener('DOMContentLoaded', async () => {
+ document.addEventListener('DOMContentLoaded', async () => {
         let allMatches = []; // Stocker tous les matchs
         const teamFilterSelect = document.getElementById('team-filter');
         const dateFilterSelect = document.getElementById('date-filter');
         const competFilterSelect = document.getElementById('competition-filter');
+         const lieuFilterSelect = document.getElementById('lieu-filter');
 
         async function fetchMatches() {
             try {
@@ -27,6 +27,17 @@
                     teamFilterSelect.appendChild(option);
                 });
 
+                // Générer les options de filtre de lieu
+                const uniqueLieu = [...new Set(allMatches.map(match => match.location))];
+                uniqueLieu.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
+
+                uniqueLieu.forEach(lieu => {
+                    const optionl = document.createElement('option');
+                    optionl.value = lieu;
+                    optionl.textContent = lieu;
+                    lieuFilterSelect.appendChild(optionl);
+                });
+                
                 // Générer les options de filtre de competitions
                 const uniqueCompet = [...new Set(allMatches.map(match => match.competition))];
                 uniqueCompet.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
@@ -38,13 +49,7 @@
                     competFilterSelect.appendChild(optionc);
                 });
                 // Générer les options de filtre de date
-                // Filtrer les dates uniques supérieures ou égales à aujourd'hui
-                const today = new Date().toISOString().split('T')[0];
-                const uniqueDate = [...new Set(allMatches
-                    .filter(match => match.match_date >= today)
-                    .map(match => match.match_date)
-                )];
-                // const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
+                const uniqueDate = [...new Set(allMatches.map(match => match.match_date))];
                 uniqueDate.sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}));
 
                 uniqueDate.forEach(match_date => {
@@ -54,7 +59,6 @@
                     dateFilterSelect.appendChild(optiond);
                 });
 
-
                 // Afficher tous les matchs initialement
                 displayMatches(allMatches);
 
@@ -62,6 +66,7 @@
                 teamFilterSelect.addEventListener('change', filterMatches);
                 competFilterSelect.addEventListener('change', filterMatches);
                 dateFilterSelect.addEventListener('change', filterMatches);
+                lieuFilterSelect.addEventListener('change', filterMatches);
             } catch (error) {
                 console.error('Erreur de chargement des matchs:', error);
             }
@@ -72,13 +77,17 @@ function filterMatches() {
     const selectedTeam = teamFilterSelect.value;
     const selectedDate = dateFilterSelect.value;
     const selectedCompet = competFilterSelect.value;
-    
+    const selectedLieu = lieuFilterSelect.value;
     // Filtrer les matchs
     let filteredMatches = allMatches;
 
     // Filtre par équipe
     if (selectedTeam) {
         filteredMatches = filteredMatches.filter(match => match.team === selectedTeam);
+    }
+        // Filtre par lieu
+    if (selectedLieu) {
+        filteredMatches = filteredMatches.filter(match => match.location === selectedLieu);
     }
     // Filtre par competition
     if (selectedCompet) {
@@ -153,6 +162,7 @@ function displayMatches(matches) {
         const todayPlus7Days = new Date(todayNew);
         todayPlus7Days.setDate(todayNew.getDate() + 7);
 
+        const url15 = 'https://www.ffhandball.fr/competitions/saison-2025-2026-21/departemental/57-10-15-m-jouer-28577/poule-172859'
         row.innerHTML = `
             <td>${match.team}</td>
             <td>${match.opponent}</td>
@@ -172,5 +182,4 @@ function displayMatches(matches) {
 }
  // Lancer le chargement des matchs
         await fetchMatches();
-
     });
