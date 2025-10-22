@@ -48,7 +48,7 @@
 {"match_date":"2025-11-22", "time": ""  , "team":"11"                 ,"opponent": "HOMECOURT HANDBALL"                        ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2025-11-22", "time": ""  , "team":"15"                 ,"opponent": "COURCELLES CHAUSSY"                        ,"location": "Domicile" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2025-11-22", "time": ""  , "team":"18"                ,"opponent": "HANDBALL CLUB DE VIGY"                     ,"location": "Domicile" , "resultat":"", "competition":"Championnat"},
-{"match_date":"2025-11-22", "time": ""  , "team":"18R"              ,"opponent": "PAGNY SUR MOSELLE AS HANDBALL"             ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
+{"match_date":"2025-11-22", "time": "17:00"  , "team":"18R"              ,"opponent": "PAGNY SUR MOSELLE AS HANDBALL"             ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2025-11-29", "time": "17:00"  , "team":"18"                ,"opponent": "METZ MAGNY HB"                             ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2025-11-29", "time": "18:00"  , "team":"SENIOR Excellence","opponent": "HAGUENAU"                                  ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2025-11-29", "time": ""  , "team":"15"                 ,"opponent": "VAL ST PIERRE"                             ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
@@ -122,6 +122,7 @@
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR 3e DTM"    ,"opponent": "GUENANGE 2"                                ,"location": "Domicile" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2026-05-30", "time": ""  , "team":"SENIOR Excellence","opponent": "E. STRASBOURG SCHILTIGHEIM ALSACE HANDBALL","location": "Extérieur" , "resultat":"", "competition":"Championnat"}
 ]
+
 
 
 
