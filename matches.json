@@ -29,7 +29,7 @@
 {"match_date":"2025-10-11", "time": "20:15"  , "team":"SENIOR 3e DTM"    ,"opponent": "AS MAXEVILLE"                              ,"location": "Extérieur" , "resultat":"Gagné", "competition":"Championnat"},
 {"match_date":"2025-10-18", "time": "19:00"  , "team":"SENIOR 3e DTM"    ,"opponent": "HAYANGE 2"                                 ,"location": "Extérieur" , "resultat":"", "competition":"Championnat"},
 {"match_date":"2025-11-08", "time": "14:00"  , "team":"11"                 ,"opponent": "ROMBAS 1"                                  ,"location": "Domicile" , "resultat":"", "competition":"Championnat"},
-{"match_date":"2025-11-01", "time": "16:00"  , "team":"15"                 ,"opponent": "VAL SAINT PIERRE"                                  ,"location": "Domicile" , "resultat":"", "competition":"Coupe echo sport"},
+{"match_date":"2025-11-02", "time": "14:30"  , "team":"15"                 ,"opponent": "VAL SAINT PIERRE"                                  ,"location": "Domicile" , "resultat":"", "competition":"Coupe echo sport"},
 {"match_date":"2025-11-01", "time": "14:30"  , "team":"13"                 ,"opponent": "HANDBALL CLUB DE VIGY"                                  ,"location": "Extérieur" , "resultat":"", "competition":"Coupe echo sport"},
 {"match_date":"2025-11-01", "time": "14:30"  , "team":"11"                 ,"opponent": "BOUZONVILLE HANDBALL"                                  ,"location": "Domicile" , "resultat":"", "competition":"Coupe echo sport"},
 {"match_date":"2025-11-01", "time": "14:30"  , "team":"SENIOR 3e DTM"                 ,"opponent": "PORCELETTE"                                  ,"location": "Extérieur" , "resultat":"", "competition":"Coupe echo sport"},
